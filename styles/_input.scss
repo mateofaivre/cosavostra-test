@@ -1,0 +1,13 @@
+.input {
+    border: none;
+    padding: 0.9rem 0;
+
+    &::placeholder {  
+        color: $color-black;
+    }
+
+    &.-email { 
+        background-color: $color-primary-light;
+        text-align: center;
+    }
+}

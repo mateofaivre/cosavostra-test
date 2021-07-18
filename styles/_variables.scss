@@ -1,0 +1,55 @@
+// Color
+$color-black: black;
+$color-white: white;
+$color-primary: #E3B2AE;
+$color-primary-light: #F9F0EF;
+$color-primary-transparent: rgba(227, 178, 174, 0.2);
+$color-secondary: #FFFF93;
+$color-bkg-grey: #C4C4C4;
+
+
+//Fonts Family
+$font-inter: 'i';
+
+// Fonts
+$light : 200;
+$thin : $light;
+$regular : 400;
+$normal : $regular;
+$medium : 500;
+$bold : 600;
+$black: 700;
+$heavy : 800;
+$extra-black : 900;
+
+//#start sizes
+$breakpoint-small-desktop : 1275;
+$breakpoint-tablet : 1024;
+$breakpoint-tablet-portrait : 960;
+$breakpoint-mobile : 720;
+$breakpoint-small-mobile : 560;
+$breakpoint-xsmall-mobile : 320;
+//#end sizes
+
+$large-desktop : "(min-width:#{$breakpoint-small-desktop + 1}px)";
+$desktop : "(min-width:#{$breakpoint-tablet + 1}px)";
+$small-desktop : "(max-width:#{$breakpoint-small-desktop + 1}px)";
+$tablet : "(max-width:#{$breakpoint-tablet}px)";
+$tablet-portrait : "(max-width:#{$breakpoint-tablet-portrait}px)";
+$mobile : "(max-width:#{$breakpoint-mobile}px)";
+$mobile : "(max-width:#{$breakpoint-mobile}px)";
+$small-mobile : "(max-width:#{$breakpoint-small-mobile}px)";
+$xsmall-mobile : "(max-width:#{$breakpoint-xsmall-mobile}px)";
+
+//#start wrappers
+$wrappers: ( //px
+  "v-small": 420,
+  /**/"text-small": 470,
+  /**/"text": 540,
+  "small": 560,
+  "medium": 1060,
+  "large": 1200,
+  "xlarge": 1280 
+);
+$wrapper-padding: 2; //rem
+//#end wrappers

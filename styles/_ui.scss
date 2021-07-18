@@ -1,0 +1,169 @@
+/* default classes */
+.clear {
+    clear: both;
+}
+
+.clearfix {
+    &:after {
+        content:'';
+        display: table;
+        clear: both;
+    }
+}
+
+.center {
+    text-align: center;
+}
+
+// .full {
+//     @include full();
+// }
+
+:target, :focus {
+    scroll-margin-top: 10rem;
+
+    .admin-bar & {
+        scroll-margin-top: calc(10rem + 32px);
+    }
+}
+
+/*html:focus-within {
+    scroll-behavior: smooth;
+}*/
+
+.page-content {
+    position: relative;
+    z-index: 10;
+    background: #fff;
+    padding-top: 8rem;
+
+    &.-no-padded {
+        padding-top: 0;
+    }
+}
+
+.bkg-cover {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.bkg-contain {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+
+.cover {
+    object-fit: cover;
+}
+
+.contain {
+    object-fit: contain;
+}
+
+.ratio-wrapper {
+    position: relative;
+
+    &:before {
+        content: '';
+        display: block;
+    }
+
+    &.-square {
+        &:before {
+            padding-bottom: 100%;
+        }
+    }
+
+    &.-video {
+        &:before {
+            padding-bottom: 56.25%;
+        }
+    }
+}
+
+.image-wrapper {
+    line-height: 0;
+    display: block;
+
+    svg, img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+.page-item {
+    width: 100%;
+    top: 0;
+    left: 0;
+    min-height: 100vh;
+    overflow: hidden;
+
+    &.-in-transition {
+        opacity: 0;
+        position: absolute;
+    }
+}
+
+.inline-list {
+    font-size: 0;
+
+    & > * {
+        display: inline-block;
+        vertical-align: middle;
+    }
+}
+
+#full-wrapper {
+    overflow: hidden;
+}
+
+.wrapper {
+    margin-left:auto;
+    margin-right:auto;
+    width: 100%;
+    position: relative;
+
+    &.-right {
+        margin-right: 0;
+    }
+
+    &.-left {
+        margin-left: 0;
+    }
+
+    &.-padded {
+        padding-left: #{$wrapper-padding}rem;
+        padding-right: #{$wrapper-padding}rem;
+    }
+
+    @each $name, $size in $wrappers {
+        &.-#{$name} {
+            max-width: #{$size/10}rem;
+
+            &.-padded {
+                max-width: ($size/10 + $wrapper-padding * 2rem);
+            }
+        }
+    }
+}
+
+.js [data-appear^="opacity"] {
+    opacity: 0;
+
+    &.-appeared {
+        opacity: 1;
+        transition: opacity linear .56s;
+    }
+}
+
+@media #{$tablet-portrait} {
+    #wpadminbar {
+        display: none!important;
+    }
+
+    html {
+        margin-top: 0!important;
+    }
+}
